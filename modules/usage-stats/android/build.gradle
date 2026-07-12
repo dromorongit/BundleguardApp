@@ -1,0 +1,27 @@
+apply plugin: "com.android.library"
+apply plugin: "kotlin-android"
+
+group = "expo.modules.usagestats"
+
+android {
+  namespace "expo.modules.usagestats"
+  compileSdk 34
+
+  defaultConfig {
+    minSdk 24
+    targetSdk 34
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_17
+    targetCompatibility JavaVersion.VERSION_17
+  }
+
+  kotlinOptions {
+    jvmTarget = "17"
+  }
+}
+
+dependencies {
+  api "expo.modules.kotlin:expo-modules-core:0.3.0"
+}

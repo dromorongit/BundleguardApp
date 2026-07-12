@@ -100,6 +100,14 @@ export async function insertUsageSnapshot(snapshot: Omit<UsageSnapshot, 'id'>): 
   return result.lastInsertRowId;
 }
 
+export async function insertAppUsage(appUsage: { snapshot_id: number; app_name: string; package_name: string; used_mb: number }): Promise<void> {
+  const database = await getDb();
+  await database.runAsync(
+    'INSERT INTO app_usage (snapshot_id, app_name, package_name, used_mb) VALUES (?, ?, ?, ?)',
+    [appUsage.snapshot_id, appUsage.app_name, appUsage.package_name, appUsage.used_mb]
+  );
+}
+
 export async function getSnapshotsForBundle(bundleId: number): Promise<UsageSnapshot[]> {
   const database = await getDb();
   return await database.getAllAsync<UsageSnapshot>(

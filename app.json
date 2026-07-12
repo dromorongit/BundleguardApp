@@ -19,13 +19,20 @@
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/android-icon-foreground.png"
-      }
+      },
+      "package": "com.dromorexpo.bundleguard"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      "expo-sqlite"
-    ]
+      "expo-sqlite",
+      "expo-dev-client"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "4d7cf5b5-b53c-4c6e-bb74-1952eb75f190"
+      }
+    }
   }
 }
