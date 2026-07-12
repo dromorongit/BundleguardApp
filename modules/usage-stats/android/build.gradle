@@ -23,5 +23,5 @@ android {
 }
 
 dependencies {
-  api "expo.modules.kotlin:expo-modules-core:0.3.0"
+  api project(":expo-modules-core")
 }
